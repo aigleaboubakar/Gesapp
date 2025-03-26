@@ -46,7 +46,7 @@ mongoose.connect(URL).then(() => console.log('connect to db...')).catch((err) =>
 app.get('/', (req, res) => {
 
     redisClient.set('products','producis...');
-    res.send('<h1>Hello aigle    ABOUBAKAR! hi ouat hi dev </h1>')
+    res.send('<h1>Hello aigle    ABOUBAKAR! using docker hub hi hi dev </h1>')
 });
 app.get('/data', async(req, res) => {
 
