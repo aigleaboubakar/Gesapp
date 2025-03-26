@@ -2,12 +2,19 @@ version: "3"
 
 services:
   node-app: 
-    container_name: express-container
     image: aiglefouat/gesapp
-    ports:
-      - "3000:3000"
     env_file:
       - ./.env
+    deploy:
+      replicas: 4
+      placement:
+        max_replicas_per_node: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
     depends_on:
       - mongo
       - redis

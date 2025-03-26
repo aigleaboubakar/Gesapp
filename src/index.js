@@ -2,6 +2,7 @@ const express = require('express');
 const { connect } = require('mongoose');
  const mongoose = require('mongoose');
 const redis = require('redis');
+const os = require('os');
 //const { Client } = require('pg');
  
 // init app
@@ -46,7 +47,8 @@ mongoose.connect(URL).then(() => console.log('connect to db...')).catch((err) =>
 app.get('/', (req, res) => {
 
     redisClient.set('products','producis...');
-    res.send('<h1>Hello aigle    ABOUBAKAR! using docker hub hi hi dev </h1>')
+    console.log('trafic from', os.hostname());
+    res.send('<h1>Hello aigle ABOUBAKAR! with watchtower</h1>')
 });
 app.get('/data', async(req, res) => {
 
