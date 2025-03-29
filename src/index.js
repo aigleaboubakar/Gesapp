@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 
     redisClient.set('products','producis...');
     console.log('trafic from', os.hostname());
-    res.send('<h1>Hello aigle ABOUBAKAR! with watchtower</h1>')
+    res.send('<h1>Hello aigle ABOUBAKAR! with watchtower and swarm </h1>')
 });
 app.get('/data', async(req, res) => {
 
